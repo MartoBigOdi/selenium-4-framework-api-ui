@@ -14,20 +14,20 @@ public class CategoriesPage {
     @FindBy(xpath = "//a[@class='nav-logo']")
     WebElement logoPrincipal;
 
-    @FindBy(css = ".nav-menu-categories-link")
+    @FindBy(css = "header.nav-header.nav-header-plus.ui-navigation-v2:nth-child(1) div.nav-bounds.nav-bounds-with-cart.nav-bounds-with-cp div.nav-area.nav-bottom-area.nav-center-area:nth-child(5) div.nav-menu ul.nav-menu-list > li.nav-menu-item:nth-child(1)")
     WebElement menuCategories;
 
-    @FindBy(xpath = "//a[normalize-space()='Electrodomésticos']")
+    @FindBy(xpath = "/html/body/header/div/div[5]/div/ul/li[1]/div/ul/li[6]/a")
     WebElement homeAppliances;
 
-    @FindBy(xpath = "//div[@class='label']/h3[contains(.,'Climatización')]")
+    @FindBy(xpath = "//*[@id=\"special\"]/a/div/div/div[1]/img")
     WebElement clickAirConditioning;
 
-    @FindBy(xpath = "//h1[@class='ui-search-breadcrumb__title']")
+    @FindBy(xpath = "//*[@id=\"root-app\"]/section/div/aside/div/h2")
     WebElement getAirConditioningTitle;
 
-    @FindBy(xpath = "//span[@class='ui-search-search-result__quantity-results']")
-    WebElement getResults;
+    @FindBy(xpath = "//*[@id=\"root-app\"]/section/div/section/section[1]/div/div/section/div[1]/span/h2")
+    WebElement getMostSearchedAirs;
 
     // Elements to "Smartphones" category
     @FindBy(xpath = "//a[normalize-space()='Tecnología']")
@@ -36,24 +36,27 @@ public class CategoriesPage {
     @FindBy(xpath = "//ul[@class='nav-categs-detail__categ-list']//a[normalize-space()='Celulares y Smartphones']")
     WebElement clickSmartphones;
 
-    @FindBy(xpath = "//h1[@class='ui-search-breadcrumb__title']")
+    @FindBy(xpath = "//*[@id=\"root-app\"]/section/div/aside/div/h2")
     WebElement getSmartphonesTitle;
 
-    @FindBy(xpath = "//span[@class='ui-search-search-result__quantity-results']")
-    WebElement getSmartphonesResults;
+    @FindBy(xpath = "//*[@id=\"root-app\"]/section/div/section/section[1]/div/div/section/div[1]/span/h2")
+    WebElement getMostSmartphonesSearched;
 
     // Elements to "Fragrances" category
     @FindBy(xpath = "//a[normalize-space()='Belleza y Cuidado Personal']")
     WebElement clickBeauty;
 
-    @FindBy(xpath = "//h3[normalize-space()='Perfumes y Fragancias']")
+    @FindBy(xpath = "//*[@id=\"root-app\"]/div/div[16]/div/div/div/div/div[11]/a/div")
     WebElement clickFragrances;
 
-    @FindBy(xpath = "//h1[@class='ui-search-breadcrumb__title']")
+    @FindBy(xpath = "/html/body/div[2]/div[1]/div[2]/button[1]")
+    WebElement clickCockies;
+
+    @FindBy(xpath = "//*[@id=\"root-app\"]/section/div/aside/div/h2")
     WebElement getFragrancesTitle;
 
-    @FindBy(xpath = "//span[@class='ui-search-search-result__quantity-results']")
-    WebElement getFragrancesResults;
+    @FindBy(xpath = "//*[@id=\"root-app\"]/section/div/section/section[1]/div/div/section/div[1]/span/h2")
+    WebElement getMostSearchedFragrances;
 
     // Elements to "Tools" category
     @FindBy(xpath = "//a[normalize-space()='Herramientas']")
@@ -123,8 +126,8 @@ public class CategoriesPage {
     /**
      * Method to get the total number of results of Air Conditioning
      */
-    public boolean getTotalResults() {
-        return getResults.isDisplayed();
+    public boolean getAirSearched() {
+        return getMostSearchedAirs.isDisplayed();
     }
 
     /**
@@ -149,8 +152,8 @@ public class CategoriesPage {
     /**
      * Method to get the total number of results of Smartphones
      */
-    public boolean getSmartphonesResults() {
-        return getSmartphonesResults.isDisplayed();
+    public boolean getSmartphonesSearched() {
+        return getMostSmartphonesSearched.isDisplayed();
     }
 
     /**
@@ -162,6 +165,8 @@ public class CategoriesPage {
         setPause();
         clickBeauty.click();
         setPause();
+        action.moveToElement(clickFragrances).perform();
+        clickCockies.click();
         clickFragrances.click();
     }
 
@@ -175,8 +180,8 @@ public class CategoriesPage {
     /**
      * Method to get the total number of results of Fragrances
      */
-    public boolean getFragrancesResults() {
-        return getFragrancesResults.isDisplayed();
+    public boolean getMostFragancesSearched() {
+        return getMostSearchedFragrances.isDisplayed();
     }
 
     /**

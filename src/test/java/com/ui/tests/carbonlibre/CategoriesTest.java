@@ -48,7 +48,7 @@ public class CategoriesTest {
     }
 
     /**
-     * Test to verify the "Air Condition" category is displayed and the total results on the page.
+     * Test to verify the "Air Condition" category is displayed and the most searched of them.
      */
     @Test(description = "Regression Test")
     void testAirConditionCategory() {
@@ -56,16 +56,16 @@ public class CategoriesTest {
         categoriesPage.airConditionCategory();
         assertSoftly(softly -> {
             softly.assertThat(categoriesPage.getAirTitle())
-                    .describedAs("Climatización Title on the category is displayed")
-                    .isEqualTo("Climatización");
-            softly.assertThat(categoriesPage.getTotalResults())
-                    .describedAs("Total results on the category is displayed")
+                    .describedAs("Aires Acondicionados Title on the category is displayed")
+                    .isEqualTo("Aires Acondicionados");
+            softly.assertThat(categoriesPage.getAirSearched())
+                    .describedAs("Most Searched about air condition")
                     .isTrue();
         });
     }
 
     /**
-     * Test to verify the "Smartphones" category is displayed and the total results on the page.
+     * Test to verify the "Smartphones" category is displayed and the most searched of them.
      */
     @Test(description = "Regression Test")
     void testSmartphonesCategory() {
@@ -75,8 +75,8 @@ public class CategoriesTest {
             softly.assertThat(categoriesPage.getSmartphonesTitle())
                     .describedAs("Celulares y Smartphones Title on the category is displayed")
                     .isEqualTo("Celulares y Smartphones");
-            softly.assertThat(categoriesPage.getSmartphonesResults())
-                    .describedAs("Total results on the category is displayed")
+            softly.assertThat(categoriesPage.getSmartphonesSearched())
+                    .describedAs("Most Searched about Smartphones")
                     .isTrue();
         });
     }
@@ -92,8 +92,8 @@ public class CategoriesTest {
             softly.assertThat(categoriesPage.getFragrancesTitle())
                     .describedAs("Perfumes y Fragancias Title on the category is displayed")
                     .isEqualTo("Perfumes y Fragancias");
-            softly.assertThat(categoriesPage.getFragrancesResults())
-                    .describedAs("Total results on the category is displayed")
+            softly.assertThat(categoriesPage.getMostFragancesSearched())
+                    .describedAs("Most Searched about Fragances")
                     .isTrue();
         });
     }
