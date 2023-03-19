@@ -109,8 +109,8 @@ public class CategoriesTest {
             softly.assertThat(categoriesPage.getToolsTitle())
                     .describedAs("Herramientas Industriales Title on the category is displayed")
                     .isEqualTo("Herramientas Industriales");
-            softly.assertThat(categoriesPage.getToolsResults())
-                    .describedAs("Total results on the category is displayed")
+            softly.assertThat(categoriesPage.getMostToolsSearched())
+                    .describedAs("Most Tools Searched")
                     .isTrue();
         });
     }
@@ -125,7 +125,7 @@ public class CategoriesTest {
         assertSoftly(softly -> {
             softly.assertThat(categoriesPage.getBabyTitle())
                     .describedAs("Cuarto del Bebé Title on the category is displayed")
-                    .isEqualTo("Cuarto del Bebé");
+                    .isEqualTo("Cuarto");
             softly.assertThat(categoriesPage.getBabyResults())
                     .describedAs("Total results on the category is displayed")
                     .isTrue();

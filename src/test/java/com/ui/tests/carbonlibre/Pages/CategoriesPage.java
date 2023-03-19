@@ -50,6 +50,7 @@ public class CategoriesPage {
     WebElement clickFragrances;
 
     @FindBy(xpath = "/html/body/div[2]/div[1]/div[2]/button[1]")
+    //static
     WebElement clickCockies;
 
     @FindBy(xpath = "//*[@id=\"root-app\"]/section/div/aside/div/h2")
@@ -62,14 +63,14 @@ public class CategoriesPage {
     @FindBy(xpath = "//a[normalize-space()='Herramientas']")
     WebElement clickTools;
 
-    @FindBy(xpath = "//h3[normalize-space()='Herramientas Industriales']")
+    @FindBy(xpath = "//*[@id=\"root-app\"]/div/div[10]/div/div/div/div/div[4]/a/div/h3")
     WebElement clickIndustrialTools;
 
-    @FindBy(xpath = "//h1[@class='ui-search-breadcrumb__title']")
+    @FindBy(xpath = "//*[@id=\"root-app\"]/section/div/aside/div/h2")
     WebElement getToolsTitle;
 
-    @FindBy(xpath = "//span[@class='ui-search-search-result__quantity-results']")
-    WebElement getToolsResults;
+    @FindBy(xpath = "//*[@id=\"root-app\"]/section/div/section/section[1]/div/div/section/div[1]/span/h2")
+    WebElement getToolsSearched;
 
     // Elements to "Baby" category
     @FindBy(xpath = "//a[normalize-space()='Bebés']")
@@ -78,10 +79,10 @@ public class CategoriesPage {
     @FindBy(xpath = "//div[@class='label']/h3[contains(.,'CUARTO DEL BEBÉ')]")
     WebElement clickBabyProducts;
 
-    @FindBy(xpath = "//h1[@class='ui-search-breadcrumb__title']")
+    @FindBy(xpath = "//*[@id=\"root-app\"]/div/div[2]/aside/div[1]/h1")
     WebElement getBabyTitle;
 
-    @FindBy(xpath = "//span[@class='ui-search-search-result__quantity-results']")
+    @FindBy(xpath = "//*[@id=\"root-app\"]/div/div[2]/aside/div[2]/span")
     WebElement getBabyResults;
 
     private static final Integer PAUSE_TIME = 3000;
@@ -166,7 +167,7 @@ public class CategoriesPage {
         clickBeauty.click();
         setPause();
         action.moveToElement(clickFragrances).perform();
-        clickCockies.click();
+        coockiesCLick();
         clickFragrances.click();
     }
 
@@ -193,6 +194,8 @@ public class CategoriesPage {
         setPause();
         clickTools.click();
         setPause();
+        action.moveToElement(clickIndustrialTools).perform();
+        coockiesCLick();
         clickIndustrialTools.click();
     }
 
@@ -206,9 +209,12 @@ public class CategoriesPage {
     /**
      * Method to get the total number of results of Tools
      */
-    public boolean getToolsResults() {
-        return getToolsResults.isDisplayed();
+    public boolean getMostToolsSearched() {
+        return getToolsSearched.isDisplayed();
     }
+
+
+
 
     /**
      * Method to check "Baby" category
@@ -219,7 +225,16 @@ public class CategoriesPage {
         setPause();
         clickBaby.click();
         setPause();
+        action.moveToElement(clickBabyProducts).perform();
+        coockiesCLick();
         clickBabyProducts.click();
+    }
+
+    /**
+     * Method to click some coockies
+     */
+    private void coockiesCLick() {
+        clickCockies.click();
     }
 
     /**

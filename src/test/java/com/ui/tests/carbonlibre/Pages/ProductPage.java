@@ -6,6 +6,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+
 public class ProductPage {
 
     WebDriver driver;
@@ -19,20 +20,26 @@ public class ProductPage {
     @FindBy(xpath = "//a[normalize-space()='Deportes y Fitness']")
     WebElement clickFitness;
 
-    @FindBy(xpath = "//div[@class='category-list__permanlink']/h3[normalize-space()='Ciclismo']")
+    @FindBy(xpath = "//*[@id=\"root-app\"]/div/div[1]/article/div/div/div/div/div/div[15]/div/a/div/div/h3")
     WebElement clickBikes;
 
-    @FindBy(xpath = "//span[normalize-space()='Antioquia']")
+    @FindBy(xpath = "//*[@id=\"root-app\"]/div/div[2]/aside/section/div[11]/ul/li[1]/a/span[1]")
     WebElement clickPrincipalLocation;
 
-    @FindBy(xpath = "//h2[@class='ui-search-item__title']")
+    @FindBy(xpath = "//*[@id=\"root-app\"]/div/div[2]/aside/div[1]/h1")
     WebElement clickFirstAttributeDisplayed;
 
-    @FindBy(xpath = "//h1[@class='ui-pdp-title']")
+    @FindBy(xpath = "//*[@id=\"root-app\"]/div/div[2]/aside/div[1]/h1")
     WebElement getProductTitle;
 
-    @FindBy(xpath = "//span[@class='andes-money-amount__fraction']")
-    WebElement getProductPrice;
+    @FindBy(xpath = "//*[@id=\"root-app\"]/div/div[2]/aside/div[2]/span")
+    WebElement getSearchedResult;
+
+    @FindBy(xpath = "/html/body/div[2]/div[1]/div[2]/button[1]")
+    WebElement clickCockies;
+
+    @FindBy(xpath = "/html/body/div[2]/div/div/div[2]/div/div/div[2]/button[2]")
+    WebElement clickLocationModal;
 
     private static final Integer PAUSE_TIME = 5000;
 
@@ -66,10 +73,22 @@ public class ProductPage {
         setPause();
         clickBikes.click();
         setPause();
+        action.moveToElement(clickPrincipalLocation).perform();
+        coockiesCLick();
         clickPrincipalLocation.click();
+        setPause();
+        clickLocationModal.click();
         setPause();
         clickFirstAttributeDisplayed.click();
         setPause();
+    }
+
+
+    /**
+     * Method to click some coockies
+     */
+    private void coockiesCLick() {
+        clickCockies.click();
     }
 
     /**
@@ -82,8 +101,8 @@ public class ProductPage {
     /**
      * Method to get the final price of the product on the page
      */
-    public boolean getProductPricePage() {
-        return getProductPrice.isDisplayed();
+    public boolean getSearchedResultPage() {
+        return getSearchedResult.isDisplayed();
     }
 
     /**

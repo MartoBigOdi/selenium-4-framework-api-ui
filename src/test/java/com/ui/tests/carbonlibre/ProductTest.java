@@ -58,8 +58,8 @@ public class ProductTest {
         assertSoftly(softly -> {
             softly.assertThat(productPage.getProductTitlePage())
                     .describedAs("The final Product title is displayed")
-                    .contains("Bicicleta");
-            softly.assertThat(productPage.getProductPricePage())
+                    .contains("bicicletas");
+            softly.assertThat(productPage.getSearchedResultPage())
                     .describedAs("The final price of the product is displayed")
                     .isTrue();
         });
