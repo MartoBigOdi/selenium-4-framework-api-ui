@@ -9,6 +9,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.annotations.AfterTest;
 
+import java.io.IOException;
+
 import static com.ui.tests.carbonlibre.BaseUrl.getBaseUrl;
 import static org.assertj.core.api.SoftAssertions.assertSoftly;
 
@@ -51,9 +53,10 @@ public class CategoriesTest {
      * Test to verify the "Air Condition" category is displayed and the most searched of them.
      */
     @Test(description = "Regression Test")
-    void testAirConditionCategory() {
+    void testAirConditionCategory() throws IOException {
         categoriesPage = new CategoriesPage(driver);
         categoriesPage.airConditionCategory();
+        categoriesPage.getScreenshotsLocator("Air aconditioning");
         assertSoftly(softly -> {
             softly.assertThat(categoriesPage.getAirTitle())
                     .describedAs("Aires Acondicionados Title on the category is displayed")
@@ -68,9 +71,10 @@ public class CategoriesTest {
      * Test to verify the "Smartphones" category is displayed and the most searched of them.
      */
     @Test(description = "Regression Test")
-    void testSmartphonesCategory() {
+    void testSmartphonesCategory() throws IOException {
         categoriesPage = new CategoriesPage(driver);
         categoriesPage.smartphonesCategory();
+        categoriesPage.getScreenshotsLocator("Cellulars and Smartphones");
         assertSoftly(softly -> {
             softly.assertThat(categoriesPage.getSmartphonesTitle())
                     .describedAs("Celulares y Smartphones Title on the category is displayed")

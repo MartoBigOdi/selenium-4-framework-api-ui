@@ -1,11 +1,16 @@
 package com.ui.tests.carbonlibre.Pages;
 
 
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import java.io.File;
+import java.io.IOException;
 
 public class CategoriesPage {
     WebDriver driver;
@@ -104,6 +109,19 @@ public class CategoriesPage {
     public boolean isLogoDisplayed() {
         return logoPrincipal.isDisplayed();
     }
+
+
+
+    /**
+     * Method to make screenshots from the locator
+     *
+     */
+    public void getScreenshotsLocator(String test) throws IOException {
+        File source = getAirConditioningTitle.getScreenshotAs(OutputType.FILE);
+        File destination = new File("./ScreenshotsUI/Assert Locator Screenshot " + test +".png");
+        FileHandler.copy(source, destination);
+    }
+
 
     /**
      * Method to check "Air Conditioning" category
