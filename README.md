@@ -1,9 +1,5 @@
-#Thanks to Douglas for gaven me this repository that i'll continues working for a while 🚀👨🏻‍💻
-
-# Carbon Libre - UI Tests - API Tests Project
-
+# 🚀👨🏻‍💻
 This is an Automation project using Java with Selenium Webdriver for UI Tests and REST Assured for API Tests.
-This project has been developed by Douglas Urrea Ocampo to improve learning on advanced Automation testing.
 
 The main features of this project has the following:
 
@@ -14,14 +10,6 @@ The main features of this project has the following:
 * TestNG is a framework for writing test automation tests.
 * REST Assured is a framework for writing RESTful API tests.
 * Selenium Webdriver is a webdriver that supports UI Tests.
-
-## 🏠 Tester details
-* Name: `Douglas Urrea Ocampo`
-* Country: `Colombia`
-* City: `Medellin`
-* E-mail: `itmteleco@gmail.com`
-* LinkedIn: [https://www.linkedin.com/in/douglasfugazi](https://www.linkedin.com/in/douglasfugazi)
-* Contact: [https://douglasfugazi.co](https://douglasfugazi.co)
 
 ### ⚡️Automation Test Strategy
 This is an end-to-end UI tests using Selenium Webdriver and API tests using REST Assured.
@@ -69,10 +57,6 @@ The website under test was MercadoLibre e-commerce website [here](https://www.me
 10. Note: POM.xml has all configuration installed, you should use the Maven build tool only.
 
 ## 🛠️ Running the project:
-1. Download the project from GitHub
-    * Option 1: `git clone https://github.com/fugazi/carbonlibre-ui-api-selenium.git`
-    * Option 2: Download it as a Zip file and extract it
-2. CD into the `Carbon Libre > carbonlibre-ui-api-selenium` folder
 3. Set up Maven
    1. Run the following command in the terminal:
        * Option 1: `mvn clean`
@@ -82,20 +66,3 @@ The website under test was MercadoLibre e-commerce website [here](https://www.me
     * Option 2: Open the project baseline and run each Selenium Test and REST API tests
 5. Enjoy the project! 😎
 
-### ✏️Step by Step tutorial
-
-TBA
-
-### 🚴 Project configuration
-* Selenium project Baseline: `Carbon Libre`
-  * Base Interface `BaseUrl.java` into folder `src\test\java\com\ui\tests`
-  * Selenium UI Tests `CategoriesTest.java` into folder `src\test\java\com\ui\tests`
-  * Selenium UI Tests `ProductTest.java` (Tests with Login Credentials) into folder `src\test\java\com\ui\tests`
-  * Page Factory Objects `CategoriesPage.java` into folder `src\test\java\com\ui\tests\carbonlibre\Pages`
-  * Page Factory Objects `ProductPage.java` into folder `src\test\java\com\ui\tests\carbonlibre\Pages`
-* testName: `ui.tests.carbonlibre.CategoriesTest` and `ui.tests.carbonlibre.ProductTest`
-+
-* API RestAssured project Baseline: `Carbon Libre`
-  * Base Utility Class `BaseSetup.java` into folder `src\test\java\com\api\tests`
-  * REST API Tests `RestfulApiTest.java` into folder `src\test\java\com\api\tests`
-* testName: `api.tests.carbonlibre.RestfulApiTest`
