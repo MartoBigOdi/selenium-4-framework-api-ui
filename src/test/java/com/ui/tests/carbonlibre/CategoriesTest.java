@@ -17,6 +17,7 @@ import static org.assertj.core.api.SoftAssertions.assertSoftly;
 public class CategoriesTest {
     public WebDriver driver;
     public CategoriesPage categoriesPage;
+    public String screenShotAssert;
 
     /**
      * Initialize the WebDriverManager and EdgeDriver.
@@ -56,7 +57,8 @@ public class CategoriesTest {
     void testAirConditionCategory() throws IOException {
         categoriesPage = new CategoriesPage(driver);
         categoriesPage.airConditionCategory();
-        categoriesPage.getScreenshotsLocator("Air aconditioning");
+        screenShotAssert = "Air aconditioning";
+        categoriesPage.getScreenshotsLocator(screenShotAssert);
         assertSoftly(softly -> {
             softly.assertThat(categoriesPage.getAirTitle())
                     .describedAs("Aires Acondicionados Title on the category is displayed")
@@ -74,7 +76,8 @@ public class CategoriesTest {
     void testSmartphonesCategory() throws IOException {
         categoriesPage = new CategoriesPage(driver);
         categoriesPage.smartphonesCategory();
-        categoriesPage.getScreenshotsLocator("Cellulars and Smartphones");
+        screenShotAssert = "Cellulars and Smartphones";
+        categoriesPage.getScreenshotsLocator(screenShotAssert);
         assertSoftly(softly -> {
             softly.assertThat(categoriesPage.getSmartphonesTitle())
                     .describedAs("Celulares y Smartphones Title on the category is displayed")
