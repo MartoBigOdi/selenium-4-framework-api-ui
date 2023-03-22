@@ -88,6 +88,7 @@ public class CategoriesTest {
         });
     }
 
+
     /**
      * Test to verify the "Fragrances" category is displayed and the total results on the page.
      */
