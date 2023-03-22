@@ -34,11 +34,11 @@ public class CategoriesTest {
     /**
      * Get the Base URL from the BaseUrl interface
      */
-
     @BeforeMethod
     void beforeTest() {
         getBaseUrl(driver);
     }
+
 
     @Test(description = "Smoke Test")
     void testHomePage(){
