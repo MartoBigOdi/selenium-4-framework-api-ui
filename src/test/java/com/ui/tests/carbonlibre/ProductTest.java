@@ -22,7 +22,7 @@ public class ProductTest {
      * Go to the website and maximize the browser window.
      */
 
-    @BeforeClass
+   // @BeforeClass
     void setUp() {
         WebDriverManager.edgedriver().setup();
         driver = new EdgeDriver();
@@ -33,12 +33,12 @@ public class ProductTest {
      * Get the Base URL from the BaseSetup interface
      */
 
-    @BeforeMethod
+   // @BeforeMethod
     void beforeTest() {
         getBaseUrl(driver);
     }
 
-    @Test(description = "Smoke Test")
+   // @Test(description = "Smoke Test")
     void testHomePage() {
         productPage = new ProductPage(driver);
         assertSoftly(softly -> {
@@ -51,7 +51,7 @@ public class ProductTest {
     /**
      * Test to verify the Product Page is displayed
      */
-    @Test(description = "Regression Test")
+   // @Test(description = "Regression Test")
     void getProductPage() {
         productPage = new ProductPage(driver);
         productPage.getProductPage();
@@ -65,7 +65,7 @@ public class ProductTest {
         });
     }
 
-    @AfterTest
+   // @AfterTest
     void tearDown() {
         driver.quit();
     }

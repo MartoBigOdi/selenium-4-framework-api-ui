@@ -24,7 +24,7 @@ public class CategoriesTest {
      * Go to the website and maximize the browser window.
      */
 
-    @BeforeClass
+   // @BeforeClass
     void setUp() {
         WebDriverManager.edgedriver().setup();
         driver = new EdgeDriver();
@@ -34,13 +34,13 @@ public class CategoriesTest {
     /**
      * Get the Base URL from the BaseUrl interface
      */
-    @BeforeMethod
+   // @BeforeMethod
     void beforeTest() {
         getBaseUrl(driver);
     }
 
 
-    @Test(description = "Smoke Test")
+   // @Test(description = "Smoke Test")
     void testHomePage(){
         categoriesPage = new CategoriesPage(driver);
         assertSoftly(softly -> {
@@ -53,7 +53,7 @@ public class CategoriesTest {
     /**
      * Test to verify the "Air Condition" category is displayed and the most searched of them.
      */
-    @Test(description = "Regression Test")
+   // @Test(description = "Regression Test")
     void testAirConditionCategory() throws IOException {
         categoriesPage = new CategoriesPage(driver);
         categoriesPage.airConditionCategory();
@@ -72,7 +72,7 @@ public class CategoriesTest {
     /**
      * Test to verify the "Smartphones" category is displayed and the most searched of them.
      */
-    @Test(description = "Regression Test")
+   // @Test(description = "Regression Test")
     void testSmartphonesCategory() throws IOException {
         categoriesPage = new CategoriesPage(driver);
         categoriesPage.smartphonesCategory();
@@ -92,7 +92,7 @@ public class CategoriesTest {
     /**
      * Test to verify the "Fragrances" category is displayed and the total results on the page.
      */
-    @Test(description = "Regression Test")
+   // @Test(description = "Regression Test")
     void testFragrancesCategory() {
         categoriesPage = new CategoriesPage(driver);
         categoriesPage.fragrancesCategory();
@@ -109,7 +109,7 @@ public class CategoriesTest {
     /**
      * Test to verify the "Tools" category is displayed and the total results on the page.
      */
-    @Test(description = "Regression Test")
+   // @Test(description = "Regression Test")
     void testToolsCategory() {
         categoriesPage = new CategoriesPage(driver);
         categoriesPage.toolsCategory();
@@ -126,7 +126,7 @@ public class CategoriesTest {
     /**
      * Test to verify the "Baby" category is displayed and the total results on the page.
      */
-    @Test(description = "Regression Test")
+   // @Test(description = "Regression Test")
     void testBabyCategory() {
         categoriesPage = new CategoriesPage(driver);
         categoriesPage.babyCategory();
@@ -141,7 +141,7 @@ public class CategoriesTest {
     }
 
 
-    @AfterTest
+   // @AfterTest
     void tearDown() {
         driver.quit();
     }

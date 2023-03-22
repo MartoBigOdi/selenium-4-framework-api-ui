@@ -1,5 +1,6 @@
 package com.api.tests.carbonlibre;
 
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
@@ -30,6 +31,7 @@ public class RestfulApiTest extends BaseSetup {
      * Test to get the product by id
      * Get Product by id to verify API response
      */
+
     @Test(description = "Regression Test")
     public void testGetProductPage() {
         given().get("/items/" + PRODUCT_ID)
