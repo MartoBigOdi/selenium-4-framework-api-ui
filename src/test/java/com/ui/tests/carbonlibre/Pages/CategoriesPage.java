@@ -113,7 +113,7 @@ public class CategoriesPage {
 
 
     /**
-     * Method to make screenshots from the locator
+     * Method to take a screenshots from the locator
      *
      */
     public void getScreenshotsLocator(String test) throws IOException {

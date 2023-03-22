@@ -24,7 +24,7 @@ public class CategoriesTest {
      * Go to the website and maximize the browser window.
      */
 
-   // @BeforeClass
+  // @BeforeClass
     void setUp() {
         WebDriverManager.edgedriver().setup();
         driver = new EdgeDriver();
@@ -34,7 +34,7 @@ public class CategoriesTest {
     /**
      * Get the Base URL from the BaseUrl interface
      */
-   // @BeforeMethod
+  // @BeforeMethod
     void beforeTest() {
         getBaseUrl(driver);
     }
@@ -141,7 +141,7 @@ public class CategoriesTest {
     }
 
 
-   // @AfterTest
+  // @AfterTest
     void tearDown() {
         driver.quit();
     }
